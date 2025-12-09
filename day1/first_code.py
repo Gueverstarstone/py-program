@@ -1,5 +1,5 @@
 print('gueverstarstone')
-print('Hello. Wolrd') # first python code
+print('Hello, Wolrd') # first python code
 print('My favorite colors are:', 'blue', 'green', 'red')
 
 #integer
