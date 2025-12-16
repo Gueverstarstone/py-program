@@ -33,11 +33,3 @@ else:
     print('Welcome, Administrator!')
 
 # Since is_admin is False, then not is_admin is saying not False which is True. So the message Access denied for non-administrators. will be printed.
-
-age = 20
-has_ticket = True
-
-if age >= 18 and has_ticket:
-    print("You can watch the movie.")
-else:
-    print("You can't watch the movie.")
