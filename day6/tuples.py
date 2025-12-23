@@ -36,7 +36,7 @@ print(programming_languages.index('Python', 2, 5)) # 2
 # Sorting with key argument (by length of string)
 programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust', 'Python')
 print(sorted(programming_languages, key=len))
-# Sorts items by length → ['C++','Rust','Java','Python','Rust','Python']
+# Sorts items by length → ['C++', 'Rust', 'Java', 'Rust', 'Python', 'Python']
 
 # Sorting in reverse order
 programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust', 'Python')
