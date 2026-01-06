@@ -1,22 +1,35 @@
-# single inheritance
+# -------------------------------
+# Example 1: Single Inheritance
+# -------------------------------
+
+# Base class (parent)
 class Animal:
-    def __init__(self,name):
+    def __init__(self, name):
+        # Every animal has a name
         self.name = name
 
     def sound(self):
+        # Default sound method for any animal
         return f'{self.name} makes a sound'
     
 
+# Child class (Dog) inherits from Animal
 class Dog(Animal):
+    # Class attribute specific to Dog
     bark = 'woof! woof! woof!!!'
 
+# Create a Dog object named Jack
 jack = Dog('Jack')
-print(jack.sound())
-print(jack.bark)
+print(jack.sound())  # Inherits Animal.sound()
+print(jack.bark)     # Access Dog-specific attribute
 
-# single inheritance
+
+# -------------------------------
+# Example 2: Method Overriding
+# -------------------------------
+
 class Animal:
-    def __init__(self,name):
+    def __init__(self, name):
         self.name = name
 
     def sound(self):
@@ -26,12 +39,18 @@ class Animal:
 class Dog(Animal):
     bark = 'woof! woof! woof!!!'
 
+    # Override the sound() method from Animal
     def sound(self):
         return f'{self.name} barks {self.bark}'
 
 jack = Dog('Jack')
-print(jack.sound())
+print(jack.sound())  # Uses Dog's overridden sound()
 print(jack.bark)
+
+
+# -------------------------------
+# Example 3: Using super()
+# -------------------------------
 
 class Animal:
     def __init__(self, name):
@@ -43,20 +62,28 @@ class Animal:
 class Dog(Animal):
     bark = 'woof! woof!! woof!!!'
 
-    # Call Animal.sound(), then append bark
+    # Extend Animal.sound() using super()
     def sound(self):
+        # Call the parent class method first
         base = super().sound()
+        # Then add Dog-specific behavior
         return f'{base}, then {self.name} barks {self.bark}'
 
 jack = Dog('Jack')
-print(jack.sound())  # Jack makes a sound, then Jack barks woof! woof!! woof!!!
+print(jack.sound())  
+# Output: Jack makes a sound, then Jack barks woof! woof!! woof!!!
 
-# multiple inheritance
-# A simple way to demonstrate multiple inheritance is with a frog, which can both walk on land and swim in water:
+
+# -------------------------------
+# Example 4: Multiple Inheritance
+# -------------------------------
+
+# First parent class
 class Walker:
     def walk(self):
         return 'I can walk on land'
 
+# Second parent class
 class Swimmer:
     def swim(self):
         return 'I can swim in water'
@@ -67,6 +94,7 @@ class Amphibian(Walker, Swimmer):
         self.name = name
 
     def introduce(self):
+        # Can use methods from both parent classes
         return f"I'm {self.name} the frog. {self.walk()} and {self.swim()}."
 
 frog = Amphibian('Freddy')
